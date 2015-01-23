@@ -1,0 +1,11 @@
+STEPS
+
+1. sudo xcode-select --install
+2. Download VirtualBox
+3. Download Vagrant (1.7.2)
+  - plugins:
+    - vagrant-chefzero
+    - vagrant-berkshelf
+4. Download Chef, ChefDK, Chef-Zero
+  - https://docs.chef.io/install_dk.html
+5. 
