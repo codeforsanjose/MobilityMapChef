@@ -1,11 +1,30 @@
 STEPS
 
-1. sudo xcode-select --install
-2. Download VirtualBox
-3. Download Vagrant (1.7.2)
-  - plugins:
-    - vagrant-chefzero
-    - vagrant-berkshelf
-4. Download Chef, ChefDK, Chef-Zero
-  - https://docs.chef.io/install_dk.html
-5. 
+Installing cyclesafe_chef Vagrant VM
+
+# chefdk download
+
+Install ChefDK      = v0.3.5
+https://downloads.chef.io/chef-dk/
+
+Install VirtualBox  ~ v4.x
+https://www.virtualbox.org/wiki/Downloads
+
+Install Vagrant     = v1.7.2
+https://www.vagrantup.com/download-archive/v1.6.5.html
+
+# Change your hosts location for the VM address
+vi /etc/hosts
+192.168.33.10 cyclesafe.com
+
+# clone zpallin/cyclesafe_repo into the directory
+git clone cyclesafe_repo
+
+# add cookbooks_local and data_bags directory
+mkdir cookbooks_local && data_bags
+
+
+
+vagrant plugin install
+vagrant-omnibus
+vagrant-berkshelf
