@@ -23,13 +23,16 @@ vi /etc/hosts
   #     "hostname" => "yoururl.com"
   #   }
 
-# add cookbooks_local and data_bags directory
+# get into the cyclesafe_chef_repo
+cd /.../cyclesafe_chef_repo
+
+# add cookbooks_local and data_bags directory to the cyclesafe_chef_repo directory
 mkdir cookbooks_local && mkdir data_bags
 
 # install vagrant plugins
 vagrant plugin install <plugin>
 - vagrant-omnibus
-- vagrant-berkshelf
+- vagrant-berkshelf # IGNORE WARNING AFTER INSTALL
 
 # install vagrant box
 vagrant box add ubuntu14.04 https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
@@ -41,13 +44,13 @@ bash chefdk_path.sh
 data_bags/keys/secret_key.json:
 {
   "id": "secret_key",
-  "key": ""
+  "key": "<PUT SECRET KEY HERE>"
 }
 
 data_bags/passwords/database.json
 {
   "id": "database",
-  "mysql": ""
+  "mysql": "<PUT MYSQL PASSWORD HERE>"
 }
 
 # git clone zpallin/cyclesafe_chef into cookbooks_local
