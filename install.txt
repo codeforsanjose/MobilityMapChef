@@ -31,14 +31,15 @@ mkdir cookbooks_local && mkdir data_bags
 
 # install vagrant plugins
 vagrant plugin install <plugin>
-- vagrant-omnibus
-- vagrant-berkshelf # IGNORE WARNING AFTER INSTALL
+1. vagrant plugin install vagrant-omnibus
+2. vagrant plugin install vagrant-berkshelf # IGNORE WARNING AFTER INSTALL
 
 # install vagrant box
 vagrant box add ubuntu14.04 https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
 
 # run the shell command to add paths to chefdk
 bash chefdk_path.sh
+. ~/.bashrc
 
 # add the secure data_bag information
 data_bags/keys/secret_key.json:

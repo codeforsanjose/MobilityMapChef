@@ -4,7 +4,7 @@
 source 'https://supermarket.chef.io'
 
 #cookbook "cyclesafe_chef",      github: "zpallin/cyclesafe_chef",     tag: "v0.1.3"
-cookbook "cyclesafe_chef",      path: "/Users/zpallin/Projects/CycleSafe/cookbooks_local/cyclesafe_chef"
+cookbook "cyclesafe_chef",      path: "cookbooks_local/cyclesafe_chef"
 
 cookbook "application",         github: "poise/application" #,          tag: "3.0.0"
 cookbook "application_python",  github: "zpallin/application_python"
