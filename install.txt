@@ -10,8 +10,9 @@ https://downloads.chef.io/chef-dk/
 Install VirtualBox  ~ v4.x
 https://www.virtualbox.org/wiki/Downloads
 
-Install Vagrant     = v1.7.2
+Install Vagrant     = v1.6.5
 https://www.vagrantup.com/download-archive/v1.6.5.html
+  # ABSOLUTELY NOT 1.7.2
 
 # Change your hosts location for the VM address
 vi /etc/hosts
@@ -22,19 +23,16 @@ vi /etc/hosts
   #     "hostname" => "yoururl.com"
   #   }
 
-# clone zpallin/cyclesafe_chef_repo to your preferred location
-git clone https://github.com/zpallin/cyclesafe_chef_repo.git
-
 # add cookbooks_local and data_bags directory
-mkdir cookbooks_local && data_bags
+mkdir cookbooks_local && mkdir data_bags
 
 # install vagrant plugins
-vagrant plugin install
+vagrant plugin install <plugin>
 - vagrant-omnibus
 - vagrant-berkshelf
 
 # install vagrant box
-vagrant box ubuntu14.04 https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
+vagrant box add ubuntu14.04 https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
 
 # run the shell command to add paths to chefdk
 bash chefdk_path.sh
