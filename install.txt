@@ -33,6 +33,9 @@ vagrant plugin install
 - vagrant-omnibus
 - vagrant-berkshelf
 
+# install vagrant box
+vagrant box ubuntu14.04 https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
+
 # run the shell command to add paths to chefdk
 bash chefdk_path.sh
 
