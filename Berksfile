@@ -3,7 +3,7 @@
 #source "https://berkshelf-api.manage.chef.io:26100"
 source 'https://supermarket.chef.io'
 
-#cookbook "cyclesafe_chef",      github: "zpallin/cyclesafe_chef",     tag: "v0.1.1"
+#cookbook "cyclesafe_chef",      github: "zpallin/cyclesafe_chef",     tag: "v0.1.3"
 cookbook "cyclesafe_chef",      path: "/Users/zpallin/Projects/CycleSafe/cookbooks_local/cyclesafe_chef"
 
 cookbook "application",         github: "poise/application" #,          tag: "3.0.0"

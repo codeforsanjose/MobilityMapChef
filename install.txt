@@ -17,14 +17,35 @@ https://www.vagrantup.com/download-archive/v1.6.5.html
 vi /etc/hosts
 192.168.33.10 cyclesafe.com
 
-# clone zpallin/cyclesafe_repo into the directory
-git clone cyclesafe_repo
+# clone zpallin/cyclesafe_chef_repo to your preferred location
+git clone https://github.com/zpallin/cyclesafe_chef_repo.git
 
 # add cookbooks_local and data_bags directory
 mkdir cookbooks_local && data_bags
 
-
-
+# install vagrant plugins
 vagrant plugin install
-vagrant-omnibus
-vagrant-berkshelf
+- vagrant-omnibus
+- vagrant-berkshelf
+
+# run the shell command to add paths to chefdk
+bash chefdk_path.sh
+
+# add the secure data_bag information
+data_bags/keys/secret_key.json:
+{
+  "id": "secret_key",
+  "key": ""
+}
+
+data_bags/passwords/database.json
+{
+  "id": "database",
+  "mysql": ""
+}
+
+# git clone zpallin/cyclesafe_chef into cookbooks_local
+git clone https://github.com/zpallin/cyclesafe_chef.git
+
+# run vagrant up
+vagrant up
