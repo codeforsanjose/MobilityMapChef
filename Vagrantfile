@@ -10,6 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # define the vbox name
   config.vm.provider :virtualbox do |vb|
     vb.name = "cyclesafe"
+    vb.memory = 1024
   end
   config.vm.define "cyclesafe" do |t|
   end
