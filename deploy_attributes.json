@@ -1,0 +1,6 @@
+{ 
+  "cyclesafe_chef": {
+    "repository":"https://github.com/zemadi/CycleSafe_deploy.git",
+    "revision":"master"
+  }
+}

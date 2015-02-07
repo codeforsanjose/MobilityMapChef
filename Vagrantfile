@@ -45,6 +45,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # assert revision
     chef.json = {
       "cyclesafe_chef" => {
+        "repository" => "/srv/cyclesafe/releases/local",
         "revision" => "master"
       },
       "instance_role" => "vagrant"
