@@ -40,6 +40,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "chef-solo-search"
     chef.add_recipe "cyclesafe_chef::database"
     chef.add_recipe "cyclesafe_chef::application"
+    chef.add_recipe "cyclesafe_chef::sysadmins"
 
     # assert revision
     chef.json = {
