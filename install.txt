@@ -54,10 +54,10 @@ data_bags/passwords/database.json
   "mysql": "<PUT MYSQL PASSWORD HERE>"
 }
 
-# git clone zpallin/cyclesafe_chef into cookbooks_local
+# git clone CycleSafe/cyclesafe_chef into cookbooks_local
 git clone https://github.com/CycleSafe/cyclesafe_chef.git
 
-# git clone zemadi/CycleSafe_deploy into the root of the cyclesafe_chef_repo
+# git clone CycleSafe/CycleSafe_deploy into the root of the cyclesafe_chef_repo
 git clone https://github.com/CycleSafe/CycleSafe_deploy.git
 
 # run vagrant up
@@ -67,7 +67,7 @@ vagrant up
 ## HOW TO EDIT
 ##
 
-Just make your changes directly into the zemadi/CycleSafe_deploy repo. 
+Just make your changes directly into the CycleSafe/CycleSafe_deploy repo. 
 
 Test by going to cyclesafe.com (or your url that you chose) in your browser. No need to restart the machine.
 
