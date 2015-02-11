@@ -55,10 +55,10 @@ data_bags/passwords/database.json
 }
 
 # git clone zpallin/cyclesafe_chef into cookbooks_local
-git clone https://github.com/zpallin/cyclesafe_chef.git
+git clone https://github.com/CycleSafe/cyclesafe_chef.git
 
 # git clone zemadi/CycleSafe_deploy into the root of the cyclesafe_chef_repo
-git clone https://github.com/zemadi/CycleSafe_deploy.git
+git clone https://github.com/CycleSafe/CycleSafe_deploy.git
 
 # run vagrant up
 vagrant up
