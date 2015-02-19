@@ -12,5 +12,19 @@ default_attributes({
   'cyclesafe_chef' => {
     'revision' => 'master'
   },
-  'instance_role' => 'production'
+  'instance_role' => 'production',
+  'authorization' => { 
+    'sudo' => {
+      'groups' => ['sysadmin']
+    }
+  },
+  'openssh' => {
+    'server' => {
+      'match' => {
+        'Group sysadmin' => {
+          'password_authentication' => 'no'
+        }
+      }
+    }
+  }
 })
