@@ -1,3 +1,4 @@
 cookbooks
 data_bags
 Vagrantfile
+cookbooks_local/mobilitymap_chef*
