@@ -3,20 +3,28 @@
 
 VAGRANTFILE_API_VERSION = '2'
 
+NODE_NAME = 'mobilitymap'
+API_REPO_NAME = 'mobilitymap_api'
+APP_REPO_NAME = 'mobilitymap_app'
+API_SHARED_DIR = '/srv/mobilitymap/mobilitymap_api'
+APP_SHARED_DIR = '/srv/mobilitymap/mobilitymap_app'
+API_REVISION = 'master'
+APP_REVISION = 'master'
+
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # box
   config.vm.box = "ubuntu14.04"
   
   # define the vbox name
   config.vm.provider :virtualbox do |vb|
-    vb.name = "cyclesafe"
+    vb.name = NODE_NAME
     #vb.memory = 1024
   end
-  config.vm.define "cyclesafe" do |t|
+  config.vm.define NODE_NAME do |t|
   end
 
   # vm hostname
-  config.vm.hostname = 'cyclesafe.com'
+  config.vm.hostname = NODE_NAME
 
   # Enable Berkshelf
   config.berkshelf.enabled = true
@@ -26,27 +34,31 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.omnibus.chef_version = '11.16.4'
 
   # using a specific IP.
-  config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: "192.168.33.11"
 
   # synched folder
-  config.vm.synced_folder 'CycleSafe_deploy', '/srv/cyclesafe/releases/local'
+  config.vm.synced_folder APP_REPO_NAME, APP_SHARED_DIR
+  config.vm.synced_folder API_REPO, API_SHARED_DIR
 
   config.vm.provision :chef_solo do |chef|
     chef.custom_config_path = "Vagrantfile.chef"
     
     #chef.roles_path = "roles"
     chef.data_bags_path = "data_bags"
-    chef.node_name = "cyclesafe.com"
-    chef.add_recipe "chef-solo-search"
-    chef.add_recipe "cyclesafe_chef::database"
-    chef.add_recipe "cyclesafe_chef::application"
-    chef.add_recipe "cyclesafe_chef::sysadmins"
+    chef.node_name = NODE_NAME
+    chef.add_role 'all_in_one'
 
     # assert revision
     chef.json = {
-      "cyclesafe_chef" => {
-        "repository" => "/srv/cyclesafe/releases/local",
-        "revision" => "master",
+      APP_REPO_NAME => {
+        "repository" => APP_SHARED_DIR,
+        "revision" => APP_REVISION,
+        "deploy_action" => 'force_deploy',
+        "debug_mode" => 'true'
+      },
+      API_REPO_NAME => {
+        "repository" => API_SHARED_DIR,
+        "revision" => API_REVISION,
         "deploy_action" => 'force_deploy',
         "debug_mode" => 'true'
       },
