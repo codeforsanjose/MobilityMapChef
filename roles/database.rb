@@ -1,3 +1,3 @@
 name "database"
-description "Delivers web content"
-run_list "recipe[cyclesafe_chef::database]", "recipe[cyclesafe_chef::sysadmins]"
+description "Stores Data"
+run_list "recipe[mobility_map::database]"
