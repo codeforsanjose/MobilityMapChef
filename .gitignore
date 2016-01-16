@@ -1,3 +1,5 @@
 cookbooks
 data_bags
 Vagrantfile
+mobilitymap_app*
+mobilitymap_api*

@@ -38,7 +38,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # synched folder
   config.vm.synced_folder APP_REPO_NAME, APP_SHARED_DIR
-  config.vm.synced_folder API_REPO, API_SHARED_DIR
+  config.vm.synced_folder API_REPO_NAME, API_SHARED_DIR
 
   config.vm.provision :chef_solo do |chef|
     chef.custom_config_path = "Vagrantfile.chef"
