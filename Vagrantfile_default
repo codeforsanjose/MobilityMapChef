@@ -31,7 +31,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.berkshelf.berksfile_path = "Berksfile"
 
   # control chef version
-  config.omnibus.chef_version = '11.16.4'
+  config.omnibus.chef_version = '12.3.1'
 
   # using a specific IP.
   config.vm.network "private_network", ip: "192.168.33.11"
@@ -45,8 +45,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
     #chef.roles_path = "roles"
     chef.data_bags_path = "data_bags"
+    chef.roles_path = "roles"
     chef.node_name = NODE_NAME
-    chef.add_role 'all_in_one'
+    chef.add_role 'role[all_in_one]'
 
     # assert revision
     chef.json = {
