@@ -3,11 +3,14 @@ Setup
 
 Please download the following:
 * VirtualBox (latest)
-* Vagrant (1.6.5)
-* Chefdk (0.3.5)
+* Vagrant (latest)
+* Chefdk (latest)
 * git (latest)
 
 For Vagrant, run the following commands:
+* install repositories
+  * for bash run `./install_repositories`
+  * for bat, wait cause we don't have a file for this yet
 * `vagrant plugin install vagrant-berkshelf`
 * `vagrant plugin install vagrant-omnibus`
 
